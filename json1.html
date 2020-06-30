@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<style type="text/css" media="screen">
+		#p0 > td{
+			width: 15px;
+			padding: 20px;
+	
+		}
+
+		ul{
+			display: flex;
+			font-size: 3vw;
+			margin: 0 auto;
+			justify-content: center;
+			
+		}
+		ul>li{
+			padding: 30px;
+		}
+		ul>li>button{
+			border: none;
+			background-color: white;
+			font-size: 3vw;
+		}
+		ul>.but:hover{
+			color:pink ;
+		}
+	#p0{
+		font-size: 1.5vw;
+		text-align: center;
+	}
+	#p0 td:nth-child(even){
+		background-color: skyblue;
+	}
+	.but{
+		color: darksalmon;
+	}
+	</style>
+
+	<script  type="text/javascript" charset="utf-8" async defer>
+
+	var temp;
+	$(document).ready(function(){
+	var data_array;
+	
+		$('.but').click(function(){
+			switch ($(this).attr('id')){
+
+				case "bt1":
+				temp = "";
+				LoadData_pagelist(1);
+				$("#t1").html(temp);
+				break;
+
+				case "bt2":
+				temp = "";
+				LoadData_pagelist(2);
+				$("#t1").html(temp);
+				break;
+
+				case "bt3":
+				temp = "";
+				LoadData_pagelist(3);
+				$("#t1").html(temp);
+				break;
+
+				case "bt4":
+				temp = "";
+				LoadData_pagelist(4);
+				$("#t1").html(temp);
+				break;
+
+				case "bt5":
+				temp = "";
+				LoadData_pagelist(5);
+				$("#t1").html(temp);
+				break;
+
+				default:
+				break;
+			}
+		});
+
+	
+	});
+	function LoadData_pagelist(page_number){
+		var max_limit;
+		var min_limit;
+			switch(page_number){
+				case 1:
+					min_limit = 0;
+					max_limit = 5;
+				break;
+				case 2:
+					min_limit = 5;
+					max_limit = 10;
+				break;
+				case 3:
+					min_limit = 10;
+					max_limit = 15;
+				break;
+				case 4:
+					min_limit = 15;
+					max_limit = 20;
+				break;
+				case 5:
+					min_limit = 20;
+					max_limit = 25;
+				break;
+
+
+			}
+
+
+			for (var i = min_limit; i < max_limit; i++) {
+	               var	temp1 = `<tr id="p0">
+	               					<td style="width:60px;">${i+1}&nbsp;&nbsp;&nbsp;</td>
+	               					<td style="width:60px;">${data_array[i].FlightDate}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].FlightNumber}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].DepartureAirportID}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].ArrivalAirportID}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].ScheduleArrivalTime}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].ActualArrivalTime}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].ArrivalRemark}&nbsp;&nbsp;&nbsp;</td>
+	               				</tr>`;
+	              		temp = temp + temp1;
+
+	         }
+	               
+	}
+	function LoadData(){
+			 $.ajax({
+	            type: "GET", //傳送方式
+	            url: "https://ptx.transportdata.tw/MOTC/v2/Air/FIDS/Airport/Arrival?$top=30&$format=JSON", //傳送目的地
+	            dataType: "json", //資料格式
+	            data:  "json",
+	            
+	            success: function(data) {
+	               console.log(data); // data是json物件
+	          	
+	          	 data_array = data;
+	               for (var i = 0; i < 5; i++) {
+	               	     var	temp1 = `<tr id="p0">
+	               					<td style="width:60px;">${i+1}&nbsp;&nbsp;&nbsp;</td>
+	               					<td style="width:60px;">${data_array[i].FlightDate}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].FlightNumber}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].DepartureAirportID}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].ArrivalAirportID}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].ScheduleArrivalTime}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].ActualArrivalTime}&nbsp;&nbsp;&nbsp;</td>
+									<td style="width:60px;">${data_array[i].ArrivalRemark}&nbsp;&nbsp;&nbsp;</td>
+	               				</tr>`;
+	              		temp = temp + temp1;
+
+	               }
+	                $("#t1").html(temp);
+	            }
+	        })
+
+	};
+
+	
+		
+
+	</script>
+
+</head>
+
+<body onload="LoadData()">
+
+	<table  style="margin-top:20PX;margin-left: auto;margin-right: auto;border:2px solid black;">
+		<caption style="height: 30px;font-size: 2em;font-weight:900;box-sizing: border-box;margin-bottom: 50px;color:gray;">Api Load "取得機場的即時入境航班" Data</caption>
+		<thead style="margin-top:120px;box-sizing: border-box;">
+			<tr id="p0" style="color:blue;font-weight: 900;border-bottom: 2PX solid black;">
+				<td>Count</td>
+				<td>FlightDate</td>
+				<td>FlightNumber</td>
+				<td>DepartureAirportID</td>
+				<td>ArrivalAirportID</td>
+				<td>ScheduleArrivalTime</td>
+				<td>ActualArrivalTime</td>
+				<td>ArrivalRemark</td>
+			</tr>
+		</thead>
+		<tbody id="t1">
+		
+
+		</tbody>
+	</table>
+
+	<ul class ="ul_page">
+		<li>頁面</li>
+		<li class="but" id="bt1" >1</li>
+		<li class="but" id="bt2" >2</li>
+		<li class="but" id="bt3" >3</li>
+		<li class="but" id="bt4" >4</li>
+		<li class="but" id="bt5" >5</li>
+	</ul>
+
+</body>
+
+</html>
+<!-- 取得機場的即時入境航班 URL
+https://ptx.transportdata.tw/MOTC?t=Air&v=2#!/Air/AirApi_Arrival -->

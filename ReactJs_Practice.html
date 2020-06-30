@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ReactJs_Practice</title>
+	
+<!-- 	reset web brower layout -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+<!-- 	jquery cdn -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- 	react.js cdn -->
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+<!-- 	jsx cdn -->
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<!-- 	babel cdn -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+
+
+	<script type="text/babel">
+
+/*
+ function time_display(){
+		
+			ReactDOM.render(
+		        <h1>現在時刻{new Date().toLocaleTimeString()}</h1>,
+		        document.getElementById('example')
+		      );
+		} 
+		setInterval(time_display,1000);
+
+
+		function Welcome(props){
+			return <h1>hello,{props.name}</h1>;
+		}
+		//自訂義標籤,開頭字母要大寫,否則呼叫失效,React規定的
+		const tt1 = <Welcome name="jerry"/> ;
+
+		ReactDOM.render(
+		       <Welcome name="jerry"/>,
+		        document.getElementById('example1')
+		      );
+
+
+	
+
+
+		function Multiple(){
+			return (
+				<div>
+					<Welcome name="Susan"/>
+					<Welcome name="Su"/>
+					<h1>111</h1>
+					<h2>222</h2>
+				</div>
+				
+			);
+		}
+
+		ReactDOM.render(
+		       <Multiple/>,
+		        document.getElementById('example2')
+		 );
+
+
+
+		class StateClass extends React.Component {
+			constructor(props){
+				super(props);
+				this.state = {date:new Date()};
+			}
+			 componentDidMount(){
+				this.Timer1  =  setInterval(() => this.setObject(),1000);
+			}
+
+			componentWillUnmount() {
+			    clearInterval(this.Timer1);
+			}
+
+			setObject(){
+				this.setState({date:new Date()});
+			}
+
+			render(){
+				return(
+				<div>
+					<h1>Time</h1>
+					<h2>{this.state.date.toLocaleTimeString()}</h2>
+				</div>
+				);
+			}
+		}
+
+		ReactDOM.render(
+		       <StateClass/>,
+		        document.getElementById('example4')
+		 );
+
+		 class ButClick1 extends React.Component {
+			writeconsole(){
+				alert("gggg");
+			}
+			render(){
+				return(<button onClick={this.writeconsole}>ggggg</button>);
+			}
+		}
+		ReactDOM.render(
+		       <ButClick1/>,
+		        document.getElementById('example5')
+		); 
+
+		class Film extends  React.Component 
+		{
+			render(){
+				return( 
+				<iframe type="text/html" frameborder="0" width="100%" height="100%" src="https://drive.google.com/uc?id=1mGnESOb9RxZHbhAmeoKyPiSlkVZPdExW"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen volumn="0"></iframe>
+				);
+			}
+		}
+
+*/
+		class Film extends  React.Component 
+		{
+			render(){
+				return( 
+				<video  width="100%"  autoplay="autoplay"  muted="true" preload="auto" loop >
+    			<source src={"C:/Users/wolfs/Desktop/How to shake a cocktail - Bartending techniques.mp4"} type='video/mp4' />
+				</video>
+				);
+			}
+		}
+
+		ReactDOM.render(
+		       <Film/>,
+		        document.getElementById('VideoPlayer')
+		);
+
+		class MenuBar1 extends  React.Component 
+		{
+			render(){
+			   const style = {
+			      opacity: "1.0",height:"100%"
+    			};
+    			 const style1 = {
+			     	color:"white"
+    			};
+				return( 
+				<div>
+					<img src={("C:\Users\wolfs\Desktop\reactjs html bartender\kisspng-beer.png")} style={style} alt="" />
+					<p style={style1}>Taiwan  Bartending  Promotion   Association</p>
+				</div>
+				
+				);
+			}
+		}
+
+		ReactDOM.render(
+		       <MenuBar1/>,
+		        document.getElementById('MenuBar')
+		);
+//ICON 沒讀到
+	</script>
+
+
+</head>
+<body>
+
+<!-- <div id="example"></div>
+<div id="example1">666</div>
+<div id="example2">777</div>
+<div id="example3">888</div>
+<div id="example4">999</div>
+<div id="example5">1000</div> -->
+
+<div id="VideoPlayer" style="z-index: -99; width: 100%; height: 100%" >
+	
+</div>
+<div id="MenuBar" style="position:fixed;width:100%; height:7.5%;background-color: black;z-index:1;top: 0;left: 0;right: 0;">
+	
+</div>
+
+<!-- <div style="position: absolute; z-index: -98; width: 100%; height: 100%;margin-top: 0;margin-left: 0;margin-right: 0;background:black;opacity: .1;"><div>
+</body> -->
+
+<!-- <script async src="https://www.youtube.com/iframe_api"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+		function onYouTubeIframeAPIReady() {
+		  var player;
+		  player = new YT.Player('YouTubeVideoPlayerAPI', {
+		    videoId: '68xd2H2YuNU',   // YouTube 影片ID
+		    width: '100%',            // 播放器寬度 (px)
+		    height: '100%',           // 播放器高度 (px)
+		    playerVars: {
+		      autoplay: 1,            // 自動播放影片
+		      controls: 0,            // 顯示播放器
+		      showinfo: 0,            // 隱藏影片標題
+		      modestbranding: 1,      // 隱藏YouTube Logo
+		      loop: 0,                // 重覆播放
+		      playlist:'68xd2H2YuNU', // 當使用影片要重覆播放時，需再輸入YouTube 影片ID
+		      fs: 0,                  // 隱藏全螢幕按鈕
+		      cc_load_policty: 0,     // 隱藏字幕
+		      iv_load_policy: 3,      // 隱藏影片註解
+		      autohide: 0 ,        // 影片播放時，隱藏影片控制列
+			  playsinline:1	    
+		    },
+		    events: {
+		      onReady: function(e) {
+		        e.target.mute();      //播放時靜音
+		        e.target.playVideo(); //強制播放(手機才會自動播放，但僅限於Android)
+		       
+		      }
+		    }
+		  });
+		 }
+</script> -->
+</html>

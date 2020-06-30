@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+
+	<meta charset="utf-8">
+
+	<title>take 1</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+  	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  	crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+	
+<!-- 	/* 	圖標連結 */ -->
+	<script src="https://kit.fontawesome.com/c1dc7b5776.js" crossorigin="anonymous"></script>
+	<style type="text/css" media="screen">
+
+
+
+
+/* 	切版練習1  */
+		.t1 {
+			height: 100vh;
+			width:100%;
+			background-color: #ccc;
+			background: 
+			linear-gradient(115deg, #4EFEB3 40%,transparent 10%) center center / 100% 100%,
+			url('https://picsum.photos/id/1012/1200/600') right center / auto 100%;
+		}
+		.t1_item{
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			font-size: 25vh;
+			margin-left: 15vh;
+			font-weight: bold;
+		}
+
+/*  切版練習2  */
+		.t2{
+			display: flex;
+			width: 100%;
+			height: 35%;
+		}
+		.item{
+			width: 25%;
+			position:relative;
+			
+		}
+		.item .text_div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0,.6);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			opacity: 0;
+			transition:opacity  .5s;
+		}
+		.item:hover .text_div{
+			opacity: 1;
+		}
+		.item img{
+			width: 100%;
+			vertical-align:middle;
+		}
+		.item h2{
+			font-size: 1.25em;
+			color: #ff0;
+			font-weight: bold;
+
+		}
+		.item p{
+			margin-top: 5px;
+			font-size: 1em;
+			color: #fff;
+			font-weight: 100;
+			line-height: 1.5;
+		}
+		.item h2:after{
+			
+			display: block;
+			content: "";
+			width: 0%;
+			height: 2px;
+			margin: 2px 0;
+			background-color: #ff0;
+			transition: width .5s .3s;
+		}
+		.item:hover h2:after{
+			width: 100%;
+		}
+
+/* 	切版練習3 */
+		.t3 {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 1000px;
+			background-color: #003377;
+			text-align: center;
+
+		}
+		.text_t3{
+			width: 100%;
+			
+		}
+		.t3-item{
+			width: 368px;
+			margin: 80px auto 80px auto;
+			background-color: #FFFFFF;
+			height: 800px;
+			border: 2px solid #ccc;
+		}
+		.text_t3 h2{
+			border-bottom: 1px solid #888;
+			font-weight: 900;
+			padding: 0.3em;
+			margin-right: 0.8em;
+			margin-left: 0.8em;
+			margin-bottom: 0.8em;
+			font-size: 2em;
+		}
+		.t3-item img{
+			width: 100%;
+			height: 50%;
+			vertical-align: middle;
+		}
+		.text_t3 p{
+			line-height: 2;
+			font-size: 1em;
+			
+		}
+		.text_t3:before{
+			content: "";
+			width: 0;
+			height: 0;
+			left: 0;
+			right: 0;
+			top: 0;
+			border-top: 50px solid transparent;
+			border-left: 184px solid #fff;
+			border-right: 184px solid #fff;			
+			transform: translateY(-100%);
+		}
+		.t3-item:hover{
+			transform: translateY(-5%);
+			border: 6px solid #66FF66;
+		}
+
+/* 	切版練習4 */
+	.t4{
+			/* padding:100px 20px; */
+		    background: linear-gradient(20deg,#3d5493,#1aa2a0) fixed center center / 100% 100%;
+
+		}
+	.title{
+			width: 50%;
+			margin: 0 25%;
+			text-align: center;
+			padding-top: 25px;
+			padding-bottom: 25px;
+			font-weight: 900;
+			font-size: 5em;
+			color: 	#FFFA78;	
+		}
+		.t4-item{
+			width: 50%;
+			margin: 0 25%;
+			display: flex;
+			align-items: center;
+			padding-bottom: 5%;
+			/* background-color: rgba(10, 174, 193, .8); */
+
+		}
+		.text_4{
+			flex-shrink: 0;
+			/* padding: 50px 30px; */
+			box-sizing: border-box;
+			position: relative;
+			z-index: 1;
+		}
+		.t4-item h2{
+			color: white;
+			font-size: 2em;
+			font-weight: 800;
+			margin-bottom: 10px;
+		}
+		.t4-item p{
+			font-weight: 700;
+			color: white;
+			font-size: 1.5em;
+			line-height: 1.25;
+		}
+		.pic{
+			width: 55%;
+			flex-shrink: 0;
+
+		}
+		.pic img{
+			width: 100%;
+
+		}
+		.t4-item > :first-child{
+			margin-right: -10%;
+		}
+
+		.t4 .t4-item:nth-child(2) .text_t4 {
+			z-index: 2;
+			background-color: rgba(100, 174, 80, .7);
+		}
+		.t4 .t4-item:nth-child(3) .text_t4{
+			z-index: 2;
+			background-color: rgba(240, 65, 193, .7);
+		}
+		.t4 .t4-item:nth-child(4) .text_t4{
+			z-index: 2;
+			background-color: rgba(240, 174, 78, .7);
+		}
+
+/* 	切版練習5 */
+	.t5{
+		width: 100%;
+		margin: auto;
+		display: flex;
+		padding: 2.5% 0;
+		flex-wrap: wrap;
+		background: linear-gradient( -30deg,yellow,orange);
+		justify-content: center;
+	}
+	.t5-item{
+		display: flex;
+		width: 370px;
+		margin: 0 15px;
+		box-shadow: 0 15px 30px  rgba(248, 148, 6, 1);
+		background-color: rgba(255, 255, 255, 0.6);
+	}
+	.t5-pic{
+		width: 50%;
+		
+	}
+	.t5-pic img{
+		width: 100%;
+		height: 100%
+	}
+	.t5-text{
+		padding: 20px;
+		width: 50%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		
+	}
+	.t5 > p{
+		text-align: center;
+		width: 50%;
+		margin: 0 25%;
+		font-size: 6em;
+		margin-bottom:50px;
+		color: rgba(219, 10, 91, 1);
+
+	}
+	.t5-text h2{
+		font-size:2em ;
+		font-weight: 500;
+		margin-bottom: 10px ;
+	}
+	.t5-text p{
+		font-size:1em ;
+		font-weight: 500;
+		line-height: 1.5em;
+	}
+	.t5-text a{
+		line-height: 1.5em;
+		border: 1px solid #ccc;
+		padding: 0 1em;
+		align-self: flex-end;
+		border-radius: 200px;
+		text-decoration: none;
+	}
+	.t5-text a:hover{
+		
+		border: 1px solid white;
+		color: white;
+		background: #ccc;
+
+		
+	}
+
+/* 切版練習6 */
+	.t6{
+		position: relative;
+		margin-top: 0 ;
+		width: 100%;
+		height: 250px;
+		padding-top: 45px;
+		background: linear-gradient(-20deg,#3f5494,#08c7a5); 
+	}
+	.t6-text{
+		width: 100%;
+		height:auto;
+		/* margin: 20px  auto; */
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+	}
+	.t6-item{
+		width: 350px;
+		
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0 20px;
+
+	}
+	.t6-item a,.t6-item p{
+		width: 100%;
+	}
+	.t6-item a{
+		text-decoration: none;
+		font-size: 1.5em;
+		font-weight: 500;
+		color: white;
+		line-height: 1.5em;
+		margin-top: 10px;
+	}
+	.t6-item p{
+		border-bottom:2px dashed #ccc;
+		height: 20%;
+		font-size: 2em;
+		font-weight: 900;
+		padding-bottom: 15px;
+		color: white;
+	}
+
+	.t6-item form{
+		display: flex;
+		width: 100%;
+		height: 100%;
+		margin: auto 0px;
+
+
+	}
+	.t6-item form input[type="text"],
+	.t6-item form input[type="submit"]{
+		border:none;
+		width: auto;
+		height: 20%;
+		margin-top: 10%;
+	}
+	.t6-item form input[type="submit"]{
+		width: 20%;
+		color: white;
+		background-color: #3e5293;
+	}
+	.t6-adress p{
+		color: white;
+		font-size: 2em;
+		font-weight: 700;
+		width: 100%;
+		height: 20px;
+		text-align: center;
+		
+	}
+	.t6-adress{
+
+		/* margin-top: 62px ;  */
+	/* 	bottom: 0px; */
+		position: absolute; 
+		bottom: 0;
+		height: 40px;
+		width: 100%;
+		background-color: #3e5293;
+	}
+
+/* 切版練習7 */
+	.t7{
+		width: 100%;
+		height: 250px;
+		background: linear-gradient(20deg,#FF88C2,	#FF8800);
+		display: flex;
+		justify-content: center;
+	}
+	.t7 nav ul{
+		margin-top: 40px;
+		display: flex;
+
+		
+	}
+	.t7 nav ul li a{
+		text-decoration: none;
+		font-size: 2.5em;
+		color: purple;
+		font-weight: 900;
+		transform: translateY(0px);
+		position: relative;
+		transition: 0.3s;
+		display: flex;
+	}
+	.t7 nav ul li a:hover{
+		transform: translateY(-10px);
+	 
+	}
+	.t7 li a:after{
+
+		content: '';
+		position: absolute;
+		left: 50%;
+		right: 50%;
+		bottom: -5px;
+		height: 0;
+		border-bottom: 3px solid purple;
+		transition: 0.3s;
+
+	}
+	.t7  li a:hover:after{
+		left: 0;
+		right: 0;
+		 
+
+	}
+	.t7  li a:hover{
+		transform: translateY(-10px);
+	}
+	.t7 nav ul li{
+		margin: 40px auto;
+
+	}
+	.t7 img{
+		margin-left:40px ;
+		width: 10%;
+		height: 10%;
+		border-radius: 100%;
+	}
+
+/* 切版練習8 */
+	.t8{
+		width: 100%;
+		margin: auto;
+		
+		overflow:hidden; 
+				
+		
+	}
+	.t8-item{
+		float: left;
+		position: relative;
+		overflow:hidden; 
+
+	}
+	.t8-item img {
+
+  		width: 100%;
+  		margin: auto;
+  		vertical-align: middle;
+	}
+	.t8-item:first-child{
+		width: 50%;
+		
+
+	}
+	.t8-item:first-child ~ .t8-item{
+		width: 25%;
+	}
+	.t8-text{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		padding: 20px;
+		box-sizing: border-box;
+		text-align: center;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		opacity: 0;
+		align-items: center;
+		line-height: 2;
+		color: white;
+		background: rgba(0, 0, 0, 0.6);
+		transform: scale(0);
+		transition: 0.5s;
+	}
+
+	.t8-item:hover .t8-text{
+		opacity: 1;
+		transform: scale(1);
+
+	}
+	.t8-text h2{
+		font-size: 2.5em;
+		font-weight: 900;
+	}
+	.t8-text p{
+		width: 100%;
+		font-size: 1.5em;
+		font-weight: 400;
+		word-wrap:break-word;
+
+		
+	}
+	
+/* 切版練習9 */
+	.t9{
+		max-width: 100%;
+		height: 900px;
+		position: relative;
+		display: flex;
+		background-image: linear-gradient(-45deg,#fffaf0,#f8c3c1 );
+	}
+	.t9-area{
+		width: 1200px;
+
+		margin:auto ;
+	
+		padding-top: 10%;
+	
+		display: flex;
+	
+
+	}
+	.t9-item{
+		width: 370px;
+		height: 100%;
+		padding: 0 15px;
+		height:400px;
+		margin: 0 20px;
+		background-color: white ;
+		display: flex;
+		flex-direction: column;
+		border: 10px solid #f9cec2;
+		border-radius: 20px;
+		box-shadow: 10px 20px 50px #f7b6a7;
+
+	}
+	.t9-icon{
+		width: 150px;
+		height: 150px;
+		background-color: #fff;
+		margin: -75px auto 0;
+		font-size: 80px;
+		text-align: center;
+		color: #f5afac;
+		position: relative;
+		line-height: 150px;
+		border-radius: 50%;
+	}
+	.t9-icon:before{
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		border-bottom: 10px solid transparent;
+		border-top: 10px solid #f9cec2;
+		border-right: 10px solid #f9cec2;
+		border-left: 10px solid transparent;
+		left: -10px;
+		top: -10px;
+		transform: rotate(-45deg);
+		border-radius: 50%;
+	}
+
+	.t9-text h2{
+		color: #f5afac;
+		font-size: 1.5em;
+		font-weight: 900;
+		text-align: center;
+	}
+	.t9-text p{
+		color: black;
+		font-size: 1em;
+		font-weight: 400;
+		line-height: 2em;
+		margin: 10px auto;
+	}
+	@keyframes t9-anime{
+		0%{transform: rotate(-20deg);}
+		100%{transform: rotate(20deg);}
+	}
+
+	.t9-item:hover .fab{
+		animation-name:  t9-anime;
+		animation-duration: 0.2s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function: linear;
+		
+	}
+
+/* 切版練習10 */
+	.t10{
+		width: 100%;
+		height: 700px;
+		background: linear-gradient(-10deg,orange,pink);
+	}
+	.slide-bar{
+		position:relative;
+		width: 300px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		background-image: linear-gradient(0deg,#3381b0,#c2196c);
+		padding: 50px 0;
+		box-sizing: border-box;
+		box-shadow: 5px 0px 10px hsla(240, 40%, 15%,.6);
+
+		transition: 0.3s;
+	}
+	.t10 .slide-bar form{
+		display: flex;
+		
+		margin: 0 10px 50px;
+		border-radius: 100px;
+		
+		border:2px solid white;	
+	} 
+
+	.t10 .slide-bar form input{
+		width: 230px;
+		border: none;
+		padding: 5px 10px;
+		color: #fff;
+		background-color: transparent;
+		line-height: 35px;
+		font-size: 15px;
+	}
+	.t10 .slide-bar form button{
+		width: 50px;
+		border: none;
+		padding: 5px 10px;
+		color: #fff;
+		background-color: transparent;
+	}
+	.t10 .slide-bar form button:focus,
+	.t10 .slide-bar form input:focus{
+		outline: none;
+	}
+	.t10 .nav a{
+		display: block;
+		padding: 30px 30px;
+		color: white;
+		font-size: 35px;
+		text-decoration: none;
+		position: relative;
+	}
+	.t10 .nav a i{
+		margin-right: 20px;
+	}
+	.t10 .nav a .fab,.t10 .nav a .fas{
+		margin-left: -1.5em;
+		transform: scale(0);
+		transition: 0.5s;
+	}
+	.t10 .nav  li:hover .fab,.t10 .nav a:hover .fas{
+		margin-left:  0;
+		transform: scale(1);
+
+	}
+	.nav  li:hover > a{
+		background: rgba(0, 0, 0, 0.7);
+	}
+
+
+	.CHECK_BUTTON{
+		position: absolute;
+		display: block;
+		width: 50px;
+		height: 80px;
+		margin: auto;
+		right: -50px;
+		top: 0;
+		bottom: 0;
+		background-color: white;
+		line-height: 80px;
+		text-align: center;
+		border-top-right-radius: 10px; 
+		border-bottom-right-radius: 10px;
+	}
+	.CHECK_BUTTON i{
+		font-size: 25px;
+		margin: auto 0px;
+
+	}
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	  color: #888888;
+	  opacity: 1; /* Firefox */
+	  font-weight: bold;
+	  font-size: 1.5em;
+	}
+
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	  color: #888888;
+	  font-weight: bold;
+
+	 
+	}
+	::-ms-input-placeholder { /* Microsoft Edge */
+ 	  color: #888888;
+ 	  font-weight: bold;
+	
+	}
+	.nav li{
+		position: relative;
+	}
+	.child-ul{
+		width: 300px;
+		position: absolute;
+		right: -100%;
+		box-shadow: 5px 0px 10px hsla(240, 40%, 15%,.6);
+		background-color: rgba(0, 0, 0, 0.5) ;
+		font-size: 35px;
+		margin-top: -65px;
+		text-align: center;
+		color: white;
+		border-top-right-radius: 10px; 
+		border-bottom-right-radius: 10px;
+		display: none; 
+		z-index: 2;
+	}
+	.nav li:hover > .child-ul{
+		display: block; 
+	}
+
+/* 	切版練習11 */
+
+	.t11{
+		width: 100%;
+		height: 600px;
+
+		background: linear-gradient(9deg,aliceblue,lightblue);
+		display: flex;
+		align-items:center;
+		position: absolute;
+		z-index: -2;
+
+	}
+	.t11 ul{
+		display: flex;
+		color: white;
+		width: 100%;
+		justify-content: center;
+
+	}
+	.t11 ul li{
+		display: flex;
+		flex-direction: column;
+		background-color: white;
+		width: 200px;
+		height: 200px;
+		font-size: 30px;
+		justify-content: center;
+		align-items:center;
+		flex-shrink: 0;
+		border-radius: 50%;
+		background-color: darksalmon;
+		box-shadow: 0px 0px 0px 5px white;
+		position: relative;
+
+
+	}
+	.t11 ul li + li{
+		margin-left: 100px;
+	}
+	.t11 ul li + li:before{
+		content: "";
+		position: absolute;
+		width: 90px;
+		height: 5px;
+		left: -100px;
+
+		background-color:  darksalmon;
+		box-shadow: 0px 0px 0px 5px white;
+		top: 0px;
+		bottom: 0px;
+		margin: auto;
+		z-index: -1;
+	}
+	.t11 .far,.t11 .fas{
+		font-size: 60px;
+		margin-bottom: 10px;
+	}
+	li.check_shopping ~ li{
+		background-color: gray;
+	}
+	.t11 ul li.check_shopping ~ li:before{
+		background-color: gray;
+	}
+
+/* 	切版練習12 */
+	.t12{
+		position: relative;
+		margin-top: 600px;
+		width: 100%;
+		height: 800px;
+		background: url('https://picsum.photos/1200/800?random=19') no-repeat center center / cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.t12-login{
+		width: 400px;
+		height: 400px;
+		background-color: rgba(0, 0, 0, 0.6);
+		box-shadow: 0 0 0 10px white;
+		border-radius: 10px;
+	}
+	.t12-login h1{
+		font-size: 2.5em;
+		font-weight: bold;
+		margin-top: 0;
+		border-bottom: 2px solid white;
+		text-align: center;
+
+	}
+	.t12-login h1:after{
+		display: block;
+		content: "";
+		width: 360px;
+		height: 2px;
+		margin-top: 10px;
+	}
+	.t12-login form{
+
+		width:auto;
+		height: 360px;
+		margin: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: white;
+	}
+	.group1{
+
+		color: white;
+		display: flex;
+		flex-direction: column;
+		top: 20px;
+		width:80%;
+		justify-content: flex-start;
+		font-size: 2em;
+		margin: 20px auto;
+
+	}
+	.group1 input{
+		margin-top: 20px;
+		line-height: 2em;
+		width:100%;
+	}
+	.group1 label{
+		font-size: 20px;
+	}
+	.group2{
+		margin-top: 20px;
+	}
+	.group2 button{
+		font-size: 20px;
+		width: 140px;
+		border: none;
+		border-radius: 10px;
+		color: white;
+		background:rgba(11, 11, 255,0.7);
+	}
+
+/* 	切版練習13 */
+	.t13{
+		width: 100%;
+		height:auto;
+	}
+	.t13container{
+		display: flex;
+		margin: auto;
+		padding: 100px 100px 25px 100px;
+	}
+	.t13container h2{
+		font-size: 2em;
+		font-weight: 900;
+		background-color: #D5C7B9;
+		box-sizing: border-box;
+		text-align: left;
+		position: relative;
+		
+	}	
+	.t13container h2:after{
+		display: block;
+		content: "";
+		position: absolute;
+		width: 280px;
+		height: 2px;
+		color: black;
+		background-color: #000;
+		margin-left: auto;
+		margin-top: -30px;
+	}
+	.t13container p{
+		width: 38%;
+		margin-left: 10px;
+		box-sizing: border-box;
+		font-size: 1em;
+		line-height: 1.5em;
+		column-count: 1;
+		column-gap: 10px;
+		
+	}
+	.t13container p:first-letter{
+		font-size: 1.5em;
+		font-weight: 500;
+	}
+	/* ------------------------------------ */
+	.t13container1{
+	/* 	margin: 50px; */
+		padding: 100px;
+	}
+	.t13container1 h2{
+		text-align: right;
+		border-right: 3px solid black;
+		float: left;
+		font-size: 2em;
+		font-weight: 900;
+		box-sizing: border-box;
+		padding: 25px;
+		margin-right:  25px;
+		margin-top: 10px;
+
+	}
+	.t13container1 p{
+		font-size: 1em;
+		line-height: 1.5em;
+	}
+	/* ------------------------------------ */
+	.t13container2{
+		margin: 100px;
+		padding: 50px;
+	}
+	.t13container2 h2{
+		width: 100%;
+		font-size: 4.5em;
+		font-weight: 900;
+		position: relative;
+		margin-bottom: 50px;
+		color: gray;
+	}
+	.t13container2 h2:after{
+		display: block;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		background-color: #EEE;
+		z-index: -1;
+		margin-top: -30px;
+
+	}
+	.t13container2 p{
+		font-size: 2em;
+		line-height: 2em;
+		column-count: 2;
+		column-gap: 60px;
+	}
+	.t13container2 p:first-letter{
+		font-size: 3em;
+		margin-right: 15px;
+		float: left;
+	}
+	/* ------------------------------------ */
+	.t13container3{
+		margin: 100px;
+		position: relative;
+	}
+	.t13container3 h2{
+		position: absolute;
+		box-sizing: border-box;
+		width: 300px;
+		height: 550px;
+		font-size: 3em;
+		top:0px;left: 0;bottom: 0;right: 0;
+		margin: auto;
+		background-color: #eee;
+		line-height: 1.5em;
+		color: gray;
+		font-weight: 900;
+		text-align: center;
+		display: flex;
+		align-items: center; 
+	}
+	.t13container3 p{
+		box-sizing: border-box;
+		column-count: 2;
+		column-gap: 360px;
+		font-size: 2em;
+		padding: 15px;
+		line-height: 2em;
+	}
+	/* ------------------------------------ */
+	.t13container4{
+		margin:100px;
+
+	}
+	.t13container4 h2{
+		width: 400px;
+		box-sizing: border-box;
+		font-size: 4em;
+		float: right;
+		padding: 40px;
+		padding-top: 0px;
+		position: relative;
+	}
+	.t13container4 h2:after{
+		content: "";
+		display: block;
+		border: 30px solid lightgray;
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		top: -20px;
+		left: 10px;
+		z-index: -1;
+	}
+	.t13container4 p{
+		font-size: 1.5em;
+		line-height: 2em;
+		column-count: 2;
+		box-sizing: border-box;
+	}
+	/* ------------------------------------ */
+	.t13container5{
+		margin:100px;
+
+	}
+	.t13container5 h2{
+		width: 400px;
+		box-sizing: border-box;
+		font-size: 4em;
+		float: right;
+		padding: 40px;
+		padding-top: 0px;
+		position: relative;
+	}
+	.t13container5 h2:after{
+		content: "";
+		display: block;
+		border: 30px solid lightgray;
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		top: -20px;
+		left: 10px;
+		z-index: -2;
+		transform: rotate(10deg);
+	}
+	.t13container5 h2:before{
+		content: "";
+		display: block;
+		/* border: 30px solid lightgray; */
+		background-color: greenyellow;
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		top: 10px;
+		left: 10px;
+		z-index: -1;
+		transform: rotate(20deg);
+	}
+	.t13container5 p{
+		font-size: 1.5em;
+		line-height: 2em;
+		column-count: 2;
+		box-sizing: border-box;
+	}
+
+	/* ------------------------------------ */
+	.t13container6{
+		margin: 100px auto 100px 100px;
+		width: 60%;
+		height: auto;
+		box-shadow: 0 0 5px #ccc;
+		box-sizing: border-box;
+		padding: 15px;
+		position: relative;
+	}
+	.t13container6 h2{
+		width: 400px;
+		position: absolute;
+		font-size: 65px;
+		line-height: 85px;
+		margin-left:100%;
+		box-sizing: border-box;
+		color: #aaa;
+		flex-shrink: 0;
+	/* 	margin-top: 50px; */
+		transform-origin: center ;
+		transform: rotate(90deg);
+	}
+	.t13container6 p{
+		font-size: 1.5em;
+		line-height: 2em;
+		column-count: 2;
+		column-gap: 10px;
+	}
+
+	/* ------------------------------------ */
+	.t13container7{
+		margin: 100px auto 100px 100px;
+		width: 60%;
+		height: auto;
+		box-shadow: 0 0 5px #ccc;
+		box-sizing: border-box;
+		padding: 15px;
+		position: relative;
+		overflow: hidden;
+	}
+	.t13container7 h2{
+		position: absolute;
+		font-size: 150px;
+		line-height:150px;
+		box-sizing: border-box;
+		text-shadow: 20px 20px 0px #eee;
+		flex-shrink: 0;
+		color: white;
+		z-index: -1;
+		top: -70px;
+
+	}
+	.t13container7 p{
+		font-size: 1.5em;
+		line-height: 2em;
+		column-count: 2;
+		column-gap: 10px;
+	}
+
+/* 	切版練習14 */
+
+	.t14{
+		position:relative;
+		width: 100%;
+		height: 600px;
+		background: linear-gradient(9deg,yellow,lightblue);
+
+	}
+	.t14-container{
+		position:absolute;
+		margin: 30px 30px 30px 30px;
+		width: 95%;
+		height:400px;
+		background-color: greenyellow;
+ 
+		display: flex;
+	}
+	.t14-container h2{
+		margin-bottom:25px;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	.t14-container textarea{
+		margin-bottom:25px;
+		font-size: 30px;
+	}
+	.t14-container button{
+		margin-bottom:25px;
+		font-size: 30px;
+
+	}
+	.t14-1{
+		width:50%;
+		height:100%;
+		background-color: gray;
+		text-align: center;
+		box-sizing: border-box;
+		padding-top:25px;
+	}
+	.t14-2{
+		width:50%;
+		height:100%;
+		background-color: white;
+		text-align: center;
+	}	
+	.t14-2 iframe{
+		width:100%;
+		height:70%;
+
+	}
+</style>
+
+
+</head>
+<body>
+<!-- 	切版練習1 -->
+	<div class="t1">
+
+		<div class="t1_item">
+			<h1 ><p style="color:#7373B9;">犬</p>  </h1>
+		
+		</div>
+
+	</div>
+<!-- 	切版練習2 -->
+	<DIV style="width: 100%;text-align: center;">
+		<br>
+		<p style="border-style: "><h1 style="font-size:28px;font-weight:bold;">都市傳說</h1></p>
+		<br>
+	</DIV>
+
+	<div class="t2">
+	
+		<div class="item">
+			<img src="https://picsum.photos/500/400?random=5" alt="">
+			
+			<div class="text_div">
+				<h2>中國大陸 &nbsp;&nbsp;  打生樁</h2>
+				<p>在全國各地廣泛流傳著修大橋要把活人埋葬於橋下，才能保證橋身穩固的說法。比如衡陽老人劉富春回憶，1932年蒸水上的青草橋在重修，衡陽城就流傳著政府要拿活人去埋在橋基的謠言導致全城恐慌</p>
+			</div>
+		</div>
+
+		<div class="item">
+			<img src="https://picsum.photos/500/400?random=10" alt="">
+			
+			<div class="text_div">
+				<h2>香港 &nbsp;&nbsp;  丁蟹效應</h2>
+
+				<p>有鄭少秋（曾飾演丁蟹一角）主演的電視劇播放，香港股市往往會大瀉。這在《大時代》播放時已經受到廣泛注目，甚至國際大鱷也留意到「丁蟹效應」。
+				鎖羅盆：新界東北一條貌似荒廢村落，有遠足人士發現行經此處時指南針會失靈，「羅盤被鎖」，以至迷失方向不能離開。鬧鬼傳言不脛而走，鎖羅盤亦成為了探險勝地。實際上該村並非廢村，而是所有村民均遷出市區居住或移民外國，平日甚少返回村內，只有太平清醮舉行期間才會返村。 
+				</p>
+			</div>
+		</div>
+
+		<div class="item">
+			<img src="https://picsum.photos/500/400?random=15" alt="">
+			
+			<div class="text_div">
+				<h2>新加坡 &nbsp;&nbsp;  虎豹別墅</h2>
+				<p>虎豹別墅是一個關於民間傳說和神話故事主題公園，但這裡並不只是展示中國神話的地方。其生動的雕像，以及著名的十八層地獄，這些鬼故事的傳說困擾了虎豹別墅幾十年，有傳言說一些雕像其實是覆蓋著蠟的死去的人。而就在主題公園內的一個小山坡上，有一些雕像被廢棄多年，那裡的老員工稱，這些雕像都是由流浪的靈魂所附體，聽那裡的保安人員描述他們會經常聽到的那些被懲罰的雕像們的哀嚎。
+				</p>
+			</div>
+		</div>
+
+		<div class="item">
+			<img src="https://picsum.photos/500/400?random=20" alt="">
+			
+			<div class="text_div">
+				<h2>臺灣 &nbsp;&nbsp;  紅衣小女孩</h2>
+				<p>一個家族聯袂出遊，在台中市北屯區大坑風景區山上郊遊時以DV拍攝影片，其中一個人於遊玩後病故，檢視影片中一名紅衣小女孩站在那位病故者後方，成為知名靈異故事。2015年改編為電影紅衣小女孩。</p>
+			</div>
+		</div>
+	</div>
+
+<!-- 	切版練習3 -->
+	<DIV style="width: 100%;text-align: center;background-color: #003377;">
+		<br>
+		<p ><h1 style="font-size:28px;font-weight:bold;color: white;">詩人簡介</h1></p>
+		<br>
+	</DIV>
+	<div class="t3">
+		<div class="t3-item">
+			<img src="https://inews.gtimg.com/newsapp_bt/0/9194953005/641" alt="">
+			
+			<div class="text_t3">
+				<h2>李白</h2>
+
+				<p>李白（701年～762年）字太白，號青蓮居士，又號「謫仙人」（賀知章評李白，李白亦自詡）。他是繼屈原以後偉大的浪漫主義詩人，被後人稱為「詩仙」，與杜甫並稱為「李杜」。身長七尺有餘（約1.83米），漢族，生於安西都護府碎葉城（一說生於四川江油青蓮鄉），4歲遷居四川綿州昌隆縣（今四川省江油市，這種說法以郭沫若為代表）。唐代偉大的浪漫主義詩人。其詩風格豪放飄逸洒脫，想像豐富，語言流轉自然，音律和諧多變。
+				</p>
+			</div>
+		</div>
+
+		<div class="t3-item">
+			<img src="https://d.share.photo.xuite.net/puydufou2005/1dfe87e/15361656/820997382_m.jpg" alt="">
+			
+			<div class="text_t3">
+				<h2>杜甫</h2>
+
+				<p>杜甫（公元712--770年），字子美，世稱杜少陵。漢族，河南鞏縣（今鄭州鞏義）人。世稱杜工部、杜拾遺，自號少陵野老。是我國唐代偉大的現實主義詩人、詩聖、世界文化名人，與李白並稱「李杜」。杜甫祖籍襄陽（今湖北襄樊市），出生於河南鞏縣，死後葬於家鄉鞏縣。杜甫的遠祖為晉代功名顯赫的杜預，乃祖為初唐詩人杜審言。杜甫曾任左拾遺、檢校工部員外郎，因此後世稱其杜拾遺、杜工部。
+				</p>
+			</div>
+		</div>
+
+		<div class="t3-item">
+			<img src="https://www.upmedia.mg/upload/article/20200306185855633497.jpg" alt="">
+			
+			<div class="text_t3">
+				<h2>白居易</h2>
+
+				<p>白居易（772～846），漢族，字樂天，晚號香山居士，新鄭（今河南鄭州新鄭市）人，是中國文學史上負有盛名且影響深遠的唐代詩人和文學家，有「詩魔」和「詩王」之稱，他的詩在中國、日本和朝鮮等國有廣泛影響，與元稹共同發起了「新樂府運動」，世稱「元白」。
+				</p>
+			</div>
+		</div>
+	</div>
+
+<!-- 	切版練習4 -->
+	<div class="t4">
+	
+		<p class="title">	Program Language</p>
+	
+		
+		<div class="t4-item">
+			<div class="pic">
+				<img src="https://picsum.photos/500/400?random=3" alt="">
+			</div>
+			
+			
+			<div class="text_t4">
+				<h2>C#</h2>
+
+				<p>C#是微軟推出的一種基於.NET框架的、物件導向的進階程式語言。C#以.NET框架類別庫作為基礎，擁有類似Visual Basic的快速開發能力。C#由安德斯·海爾斯伯格主持開發，微軟在2000年發布了這種語言，希望藉助這種語言來取代Java。C#已經成為Ecma國際和國際標準組織的標準規範。
+				</p>
+			</div>
+		</div>
+
+		<div class="t4-item">
+
+			<div class="text_t4">
+				<h2>Java</h2>
+
+				<p>	任職於昇陽電腦的詹姆斯·高斯林等人於1990年代初開發Java語言的雛形，最初被命名為Oak，目標設定在家用電器等小型系統的程式語言，應用在電視機、電話、鬧鐘、烤麵包機等家用電器的控制和通訊。隨著1990年代網際網路的發展，Sun公司看見Oak在網際網路上應用的前景，於是改造了Oak，於1995年5月以Java的名稱正式釋出。Java伴隨著網際網路的迅猛發展而發展，逐漸成為重要的網路程式語言。
+			</div>
+
+			<div>
+				<img src="https://picsum.photos/500/400?random=6" alt="">
+			</div>
+		</div>
+
+		<div class="t4-item">
+			<div>
+				<img src="https://picsum.photos/500/400?random=9" alt="">
+			</div>
+			
+			<div class="text_t4">
+				<h2>c++</h2>
+
+				<p>
+				比雅尼·斯特勞斯特魯普博士在貝爾實驗室工作期間在20世紀80年代發明並實現了C++。起初，這種語言被稱作「C with Classes」（「包含『類』的C語言」），作為C語言的增強版出現。隨後，C++不斷增加新特性。虛擬函式、運算子多載、多繼承、標準模板庫,例外處理、執行時型別資訊、命名空間等概念逐漸納入標準。
+				</p>
+			</div>
+		</div>
+		
+	</div>
+<!-- 切版練習5 -->
+
+
+	<DIV class="t5">
+		<p>小熊維尼介紹</p>
+
+		<div class="t5-item">
+			<div class="t5-pic">
+				<img src="https://cdn2.ettoday.net/images/2297/2297892.jpg" alt="">
+			</div>
+
+			<div class="t5-text">
+				<h2>小熊維尼</h2>
+				<p>雄性，只穿著紅色的上衣，不穿褲子，主要食糧是蜂蜜，而當蜂蜜吃完以後常常立刻跑去瑞比家要蜂蜜。</p>
+				<a href="#">more</a>
+			</div>
+		</div>
+
+		<div class="t5-item">
+			<div class="t5-pic">
+				<img src="https://pic.pimg.tw/casanovab110/1376462702-4273505373_n.jpg" alt="">
+			</div>
+
+			<div class="t5-text">
+				<h2>跳跳虎</h2>
+				<p>
+					雄性，一隻喜歡彈跳的老虎，常常會用彈簧尾巴到處跳來跳去，因此時常會有小破壞。
+				</p>
+				<a href="#">more</a>
+			</div>
+		</div>
+
+		<div class="t5-item">
+			<div class="t5-pic">
+				<img src="https://www.freevector.com/uploads/vector/preview/11042/FreeVector-Eeyore-Vector.jpg" alt="">
+			</div>
+
+			<div class="t5-text">
+				<h2>屹耳</h2>
+				<p>
+					雄性，一隻時常很憂鬱的驢子，住在山頂上用木頭搭建的屋子。常常愁眉苦臉，又因頸部不能挺直，令他看來沒精打采。特徵是尾巴經常會甩尾。
+				</p>
+				<a href="#">more</a>
+			</div>
+		</div>
+
+	</DIV>
+
+<!-- 切版練習6 -->
+
+	<div class="t6">
+		<div class="t6-text">
+			<div class="t6-item">
+				<p>焦點議題</p>
+				<a href="">>&nbsp;&nbsp;重要談話</a>
+				<a href="">>&nbsp;&nbsp;創新經濟</a>
+				<a href="">>&nbsp;&nbsp;年金改革</a>
+			</div>
+			<div class="t6-item">
+				<p>新聞與活動</p>
+				<a href="">>&nbsp;&nbsp;總統府新聞</a>
+				<a href="">>&nbsp;&nbsp;總統令</a>
+				<a href="">>&nbsp;&nbsp;每日活動行程</a>
+			</div>
+			<div class="t6-item">
+				<p>中華民國簡介</p>
+				<a href="">>&nbsp;&nbsp;國情簡介</a>
+				<a href="">>&nbsp;&nbsp;中華民國憲法</a>
+				<a href="">>&nbsp;&nbsp;國父</a>
+			</div>
+			<div class="t6-item">
+				<p>訂閱電子報</p>
+				<form action="take1_submit" method="get" accept-charset"utf-8">
+					<input type="text" name="">
+					<input type="submit" name="">
+				</form>
+			</div>
+		</div>
+		
+		<div class="t6-adress">
+			<p>中華民國總統府地址：10048 臺北市中正區重慶南路1段122號（交通位置）總機：（02）2311-3731</p>
+		</div>
+	</div>
+
+<!-- 切版練習7 -->
+	<div class="t7">
+		
+		<nav>
+			<ul>
+				<li><a href="" title="">公司介紹</a></li>
+				<li><a href="" title="">公司新聞</a></li>
+				<img src="https://images.fineartamerica.com/images-medium-large/doge-s-palace-lion-of-st-mark-venice-cedric-darrigrand.jpg">
+				<li><a href="" title="">產品介紹</a></li>
+				<li><a href="" title="">聯絡資訊</a></li>
+			</ul>
+		</nav>
+	</div>
+
+<!-- 切版練習8 -->
+
+	<div class="t8">
+		
+		<div class="t8-item">
+			
+			<img src="https://i.pinimg.com/originals/ae/7c/05/ae7c057ba8b210760e04e09db7cbd06e.jpg" alt="">
+
+			
+			<div class="t8-text">
+				<h2>阿信</h2>
+				<p>陳信宏（1975年12月6日－），綽號阿信（英文：Ashin），出生於臺灣臺北市北投區。臺灣樂團五月天的主唱、知名詞曲創作者，亦是相信音樂創始人之一、潮流服飾品牌「StayReal」的創始人及設計者之一。曾擔任第五屆公共電視文化事業基金會董事 。
+				陳信宏畢業於北投國小體育班、北投國中、國立師大附中778美術班，擔任過與怪獸同屆吉他社上下學期的社長以及畢聯會主席，後於實踐大學室內設計系肄業。
+
+				2006年11月，阿信以電影《盛夏光年》之同名歌曲〈盛夏光年〉入圍第43屆金馬獎「最佳原創電影歌曲獎」。2007年，他與高中同學、插畫家不二良共同創立潮流服飾品牌「StayReal」，發展個人副業。2009年6月27日，他憑藉《後青春期的詩》專輯中的歌曲〈我心中尚未崩壞的地方〉、〈如煙〉提名第20屆金曲獎「最佳作詞人獎」。2012年8月，他出任第五屆公共電視文化事業基金會董事之一，後於2016年卸任。2013年3月，榮獲「華人娛樂圈十大傑出青年」第二名。2017年6月24日，他憑藉《自傳》專輯中的歌曲〈成名在望〉拿下第28屆金曲獎「最佳作詞人獎」。
+
+				2019年1月，阿信投資早午餐店「扶瑞號（FULL REAL）」，首間門市進駐於上海來福士廣場。同年3月，他獲頒MUST社團法人中華音樂著作權協會的「最具影響力獎」。同年8月2日，阿信開設個人YouTube頻道，並於同月6日上傳首支影片、五月天於超犀利趴10重新編曲演唱的蔡依林歌曲〈玫瑰少年〉MV，且連續三天位居該網站臺灣發燒影片首位。
+				</p>
+			</div>
+			
+		</div>
+		<div class="t8-item">
+		
+				<img src="https://upload.wikimedia.org/wikipedia/commons/3/37/%E4%BA%94%E6%9C%88%E5%A4%A9-%E6%80%AA%E7%8D%B8_%285247925751%29.jpg" alt="">
+		
+			
+			<div class="t8-text">
+				<h2>怪獸</h2>
+				<p>溫尚翊（1976年11月28日－），綽號怪獸（英文：Monster），出生於臺灣新竹市。臺灣樂團五月天的吉他手兼團長，亦是相信音樂創始人之一。
+
+				</p>
+			</div>
+		</div>
+		<div class="t8-item">
+		
+				<img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Mayday_Stone_at_2014_Just_Rock_It%21%21%21_Tour.jpg" alt="">
+		
+			
+			<div class="t8-text">
+				<h2>石頭</h2>
+				<p>石錦航（1975年12月11日－），綽號石頭（英文：Stone），出生於臺灣臺北市。臺灣樂團五月天的吉他手，曾改名「石航瑋」（用於《五月天第一張創作專輯》中），後使用原名「石錦航」，亦是相信音樂創始人之一、樂器行兼咖啡廳「音舖（Input）」創始人。</p>
+			</div>
+		</div>
+		<div class="t8-item">
+
+				<img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Mayday_Masa_at_2014_Just_Rock_It%21%21%21_Tour.jpg" alt="">
+
+			
+			<div class="t8-text">
+				<h2>瑪莎</h2>
+				<p>蔡昇晏（1977年4月25日－），綽號瑪莎（英文：Masa），出生於臺灣高雄市。臺灣樂團五月天的貝斯手，亦是相信音樂創始人之一、咖啡廳兼展演空間「OFFLINE 離線咖啡」創始人。</p>
+			</div>
+		</div>
+		<div class="t8-item">
+
+				<img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Mayday_Ming_at_2014_Just_Rock_It%21%21%21_Tour.jpg" alt="">
+
+			
+			<div class="t8-text">
+				<h2>劉冠佑</h2>
+				<p>劉冠佑（1973年07月28日－），出生於臺灣苗栗市。臺灣樂團五月天的鼓手，亦是相信音樂創始人之一、潮流服飾品牌「Drumming 著迷」的創始人。</p>
+			</div>
+		</div>
+		
+	</div>
+
+
+<!-- 切版練習9 -->
+	<div class="t9">
+		<div class="t9-area">
+			<div class="t9-item">
+				<div class="t9-icon">
+					<i class="fab fa-angellist"></i>
+				</div>
+
+				<div class="t9-text">
+					<h2>劉備</h2>
+					<p>漢昭烈帝劉備（161年7月16日－223年6月10日），字玄德，涿郡涿縣（今河北省涿州市）人，祖籍徐州沛縣（今徐州市沛縣），亦稱漢先主，三國時代蜀漢第一位皇帝，諡號昭烈皇帝，三國志、華陽國志等稱為先主 ，繼其帝位的劉禪則被稱為「後主」，資治通鑑稱劉備父子為漢主。
+
+		劉備雖為漢景帝後代，但世系久遠，實由布衣起步而終得一方天下。</p>
+				</div>
+			</div>
+
+			<div class="t9-item">
+				<div class="t9-icon">
+					<i class="fab fa-affiliatetheme"></i>
+				</div>
+
+				<div class="t9-text">
+					<h2>孫權</h2>
+					<p>孫權（182年7月5日－252年5月21日），字仲謀，吳郡富春（今浙江省杭州市富陽區）人，東漢末三國時期吳的著名政治家、戰略家，同時也是吳的締造者及建國皇帝。而在孫權稱帝之前，吳的群臣等對其稱呼為將軍或至尊。在位23年，享年69歲，諡號為大皇帝，廟號太祖。</p>
+				</div>
+			</div>
+
+			<div class="t9-item">
+				<div class="t9-icon">
+					<i class="fab fa-amazon-pay"></i>
+				</div>
+
+				<div class="t9-text">
+					<h2>曹操</h2>
+					<p>曹操（155年－220年3月15日），字孟德，小名吉利，小字阿瞞，沛國譙縣（今安徽亳州）人。東漢末年著名軍事家、政治家、文學家和詩人，三國時代曹魏奠基者和主要締造者。曹操於建安年間權傾天下，在世時官至丞相，爵至魏王，諡號武王。其子曹丕受禪稱帝後，追尊其為武皇帝，廟號太祖。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- 切版練習10 -->
+	<div class="t10">
+		<div class="slide-bar">
+			<form action="" method="get" accept-charset="utf-8">
+				<input type="search" name="" placeholder="輸入搜尋關鍵字">
+				<button type=""><i class="fas fa-search"></i></button>
+			</form>
+
+			<ul class="nav">
+				<li>
+					<a href=""> <i class="fab fa-alipay"></i>側邊攔1 </a> 
+					
+					<ul class="child-ul">
+						<li><a href=""> child slide-bar 1</a> 
+							
+							<ul class="child-ul">
+								<li><a href="">1-1</a></li>
+								<li><a href="">1-2</a></li>
+							</ul>
+						</li>
+
+						<li><a href=""> child slide-bar 2</a> 
+							
+							<ul class="child-ul">
+								<li><a href="">2-1</a></li>
+								<li><a href="">2-2</a></li>
+							</ul>
+						</li>
+
+						<li><a href=""> child slide-bar 3</a> 
+							
+							<ul class="child-ul">
+								<li><a href="">3-1</a></li>
+								<li><a href="">3-2</a></li>
+							</ul>
+						</li>
+					</ul>
+
+				</li>
+
+				<li><a href=""> <i class="fab fa-cc-paypal"></i>側邊攔2 </a>	</li>
+
+				<li><a href=""> <i class="fab fa-avianex"></i>側邊攔3 </a>	</li>
+
+				<li><a href=""> <i class="fab fa-android"></i>側邊攔4 </a>	</li>
+
+				<li><a href=""> <i class="fab fa-battle-net"></i>側邊攔5 </a>	</li>
+			</nav>
+
+			<div class = "CHECK_BUTTON">
+				<i class="fas fa-caret-right"></i>
+			</div>
+		</div>
+		
+	</div>
+
+	<script  type="text/javascript" charset="utf-8" async defer>
+		$(document).ready(function(){
+			var check_value = true;
+			
+			$(".CHECK_BUTTON").click(function() {
+				
+				if( check_value == true){
+				
+					$(".slide-bar").css({"transform":"translateX(-100%)"});
+					$(".CHECK_BUTTON i").removeClass('fas fa-caret-right');
+					$(".CHECK_BUTTON i").addClass('fas fa-caret-left');
+
+					check_value = false;
+					
+				}
+				else{
+					
+					$(".slide-bar").css({"transform":"translateX(0)"});
+					$(".CHECK_BUTTON i").removeClass('fas fa-caret-left');
+					$(".CHECK_BUTTON i").addClass('fas fa-caret-right');
+
+					check_value = true;
+				}
+
+			});
+
+			$(".t14-but").click(function() {
+				// alert("666");
+				var tempstring = $(".t14-textarea").val();
+				// alert(tempstring);
+				var url = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&choe=UTF-8&chl="+ tempstring;
+
+				   $(".t14-2 iframe").attr({
+				   	src: url
+				   });
+				   $(".t14-2 p").html("Your QR Code Url Address: "+url)
+			});
+		});
+
+	</script>
+
+
+<!-- 	切版練習11 -->
+
+	<div class="t11">
+		<ul>
+			<li> <i class="far fa-file-alt"></i> 收到訂單</li>
+			<li class="check_shopping"> <i class="fas fa-box"></i>	撿貨中 </li>
+			<li> <i class="fas fa-truck"></i> 運送中</li>
+			<li> <i class="fas fa-check-square"></i>已送達</li>
+		</ul>
+		
+	</div>
+
+<!-- 切版練習12 -->
+
+	<div class="t12">
+		<div class="t12-login">
+			<form action="" method="get" accept-charset="utf-8">
+				<h1>會員登入</h1>
+
+				<div class="group1">
+					<label>會員帳號</label>
+					<input type="text" name="">
+				</div>
+
+				<div  class="group1">
+					<label>密碼</label>
+					<input type="text" name="">
+				</div>
+
+				<div  class="group2">
+					<button type="">登入</button>
+					<button type="">取消</button>
+				</div>
+			</form>
+		</div>	
+	</div>
+
+<!-- 	切版練習13 -->
+
+	<div class="t13">
+		<div class="t13container">
+			<h2>Hong Kong elections: Carrie Lam promises 'open mind' after election rout</h2>
+
+			<p>Hong Kong's leader Carrie Lam has said the government will listen to the public with an open mind, after pro-Beijing candidates were resoundingly defeated in local elections.
+
+			According to local media counts, 17 of the 18 councils are now controlled by pro-democracy councillors.
+
+			The election saw an unprecedented voter turnout of more than 71%
+
+			The result is being seen as a stinging rebuke of Ms Lam's leadership through many months of protest and clashes.
+
+			In a statement released online on Monday, Ms Lam said the government respected the results.
+
+			She said there were "various analyses and interpretations" but that "quite a few are of the view that the results reflect people's dissatisfaction with the current situation and the deep-seated problems in society".
+
+			The government would "listen humbly to citizens' opinions and reflect on them seriously", she said.
+
+			For nearly six months demonstrations and unrest have continued unabated - they were sparked by a now withdrawn extradition bill.
+
+			Police have at times used live rounds, wounding several protesters. Activists in turn have attacked police and in one case set alight a government supporter.
+
+			Sunday's vote - which unfolded without incident - was the opportunity for people to express at the ballot box their view of Ms Lam's handling of the crisis.
+
+			The government and Beijing had been hoping the election would bring a show of support from the so-called "silent majority", but that did not materialise.
+
+			Instead some high-profile pro-Beijing candidates lost their seats.
+			</p>
+			
+			<p>What does it mean for Hong Kong?
+			Hong Kong's district councillors have little political power and mainly deal with local issues such as bus routes and rubbish collection, so the district elections don't normally generate such interest.But the district councillors also get to choose 117 of their number to sit on the 1,200-member committee that selects Hong Kong's leader, the chief executive. The landslide results mean all of those 117 seats are now likely to go to pro-democracy candidates.
+
+			Read more on how Hong Kong is run
+			But this result is also highly symbolic.
+
+			It was always unclear how much of the general population still supported the protesters as violence escalated each month, and authorities had been hoping the election result might marginalise the protesters as a small group of fringe extremists.
+
+			But in many districts, young first-time candidates, many who had explicitly aligned themselves with the protesters, unseated established politicians backing the government.
+
+			The hope from activists is that the overwhelming victory of anti-establishment parties will force the government to take protesters' demands more seriously.
+			</p>
+		
+		</div>
+
+		<div class="t13container1">
+			<h2>Government cautiously assessing defecting PRC spy’s claims of buying political influence</h2>
+
+			<p>Chinese defector Wang Liqiang, who is seeking political asylum in Australia, has dropped a major bombshell into Taiwan’s election campaigning when he alleged that the PRC had bought up certain Taiwanese television stations to the tune of US$200 million and even raised US$2.8 million to give to certain political candidates.
+			</p>
+			
+			<p>The government is assessing the claims cautiously. The National Security Bureau stressed that the fine details of the cases still have to be verified and it didn’t want to indulge in speculation before the facts were known.
+			</p>
+		
+		</div>
+
+		<div class="t13container2">
+			<h2>Cold and rainy weather forecast for this week</h2>
+
+			<p>On the weekend, the sun was shining, but starting on Monday, two cold air masses will move southwards and the weather in northern and northeast Taiwan will become cold and rainy.
+			</p>
+			
+			<p>On Monday and Tuesday, temperatures in northern Taiwan could plunge to 17 degrees, before warming up a little bit on Wednesday. Then, temperatures are expected to plunge again on Thursday and could dip as low as 15 degrees in Taiwan’s north. In Taiwan’s central and southern regions, it will be cold in the mornings and the evenings and gaps between daytime and night time temperatures could be more than 10 degrees.
+			</p>
+		
+		</div>
+
+		<div class="t13container3">
+			<h2>Cold and rainy weather forecast for this week</h2>
+			
+			<p>On the weekend, the sun was shining, but starting on Monday, two cold air masses will move southwards and the weather in northern and northeast Taiwan will become cold and rainy.
+			</p>
+			
+			<p>On Monday and Tuesday, temperatures in northern Taiwan could plunge to 17 degrees, before warming up a little bit on Wednesday. Then, temperatures are expected to plunge again on Thursday and could dip as low as 15 degrees in Taiwan’s north. In Taiwan’s central and southern regions, it will be cold in the mornings and the evenings and gaps between daytime and night time temperatures could be more than 10 degrees.
+			</p>
+		
+		</div>
+
+		<div class="t13container4">
+			<h2>Cold and rainy weather forecast for this week</h2>
+			
+			<p>On the weekend, the sun was shining, but starting on Monday, two cold air masses will move southwards and the weather in northern and northeast Taiwan will become cold and rainy.
+			</p>
+			
+			<p>On Monday and Tuesday, temperatures in northern Taiwan could plunge to 17 degrees, before warming up a little bit on Wednesday. Then, temperatures are expected to plunge again on Thursday and could dip as low as 15 degrees in Taiwan’s north. In Taiwan’s central and southern regions, it will be cold in the mornings and the evenings and gaps between daytime and night time temperatures could be more than 10 degrees.
+			</p>
+		
+		</div>
+
+		<div class="t13container5">
+			<h2>Cold and rainy weather forecast for this week</h2>
+			
+			<p>On the weekend, the sun was shining, but starting on Monday, two cold air masses will move southwards and the weather in northern and northeast Taiwan will become cold and rainy.
+			</p>
+			
+			<p>On Monday and Tuesday, temperatures in northern Taiwan could plunge to 17 degrees, before warming up a little bit on Wednesday. Then, temperatures are expected to plunge again on Thursday and could dip as low as 15 degrees in Taiwan’s north. In Taiwan’s central and southern regions, it will be cold in the mornings and the evenings and gaps between daytime and night time temperatures could be more than 10 degrees.
+			</p>
+		</div>
+		
+		<div class="t13container6">
+			<h2>Cold and rainy weather forecast for this week</h2>
+			
+			<p>On the weekend, the sun was shining, but starting on Monday, two cold air masses will move southwards and the weather in northern and northeast Taiwan will become cold and rainy.
+			</p>
+			
+			<p>On Monday and Tuesday, temperatures in northern Taiwan could plunge to 17 degrees, before warming up a little bit on Wednesday. Then, temperatures are expected to plunge again on Thursday and could dip as low as 15 degrees in Taiwan’s north. In Taiwan’s central and southern regions, it will be cold in the mornings and the evenings and gaps between daytime and night time temperatures could be more than 10 degrees.
+			</p>
+		</div>
+
+		<div class="t13container7">
+			<h2>Cold and rainy weather forecast for this week</h2>
+			
+			<p>On the weekend, the sun was shining, but starting on Monday, two cold air masses will move southwards and the weather in northern and northeast Taiwan will become cold and rainy.
+			</p>
+			
+			<p>On Monday and Tuesday, temperatures in northern Taiwan could plunge to 17 degrees, before warming up a little bit on Wednesday. Then, temperatures are expected to plunge again on Thursday and could dip as low as 15 degrees in Taiwan’s north. In Taiwan’s central and southern regions, it will be cold in the mornings and the evenings and gaps between daytime and night time temperatures could be more than 10 degrees.
+			</p>
+		</div>
+	</div>
+
+
+<!-- 	切版練習14 -->
+	<div class="t14">
+		<div class="t14-container">
+			<div class="t14-1">
+
+					<h2>Convert Your String to QR Code</h2>
+					<textarea name="" class="t14-textarea"></textarea>
+					<br>
+					<button class="t14-but">Convert</button>
+
+			</div>
+
+			<div class="t14-2">
+				<iframe src=""></iframe>
+				<p>Your QR Code Url Address</p>
+			</div>
+		</div>	
+	</div>
+</body>
+
+</html>
+
+
+<!--https://ithelp.ithome.com.tw/articles/10226776 -->
+
+<!-- https://ithelp.ithome.com.tw/articles/10220656 -->
